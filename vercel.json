@@ -1,22 +1,27 @@
 {
   "builds": [
     {
-      "src": "api/process-vowels.py",
+      "src": "api/process-vowels.py", // Ini mengidentifikasi file Python sebagai serverless function
       "use": "@vercel/python"
+    },
+    {
+      "src": "index.html", // Ini memberitahu Vercel tentang file index.html Anda yang di root
+      "use": "@vercel/static-build" // Menggunakan builder untuk aset statis
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/process-vowels.py"
+      "dest": "/api/process-vowels.py" // Semua request ke /api/ akan diarahkan ke process-vowels.py
     },
     {
       "src": "/",
-      "dest": "/index.html"
+      "dest": "/index.html" // Root URL akan menampilkan index.html dari root
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/$1" // Rute fallback untuk file statis lainnya dari root
     }
   ]
+  // HAPUS ATAU JANGAN TAMBAHKAN "outputDirectory" DI SINI
 }
