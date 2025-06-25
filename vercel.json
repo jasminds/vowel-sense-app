@@ -3,6 +3,13 @@
     {
       "src": "api/process-vowels.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "**/*.{html,css,js}",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "echo 'No dedicated static build process needed, just serving files.'"
+      }
     }
   ],
   "routes": [
@@ -11,8 +18,9 @@
       "dest": "/api/process-vowels.py"
     },
     {
-      "src": "/(.*)", 
+      "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "outputDirectory": "."
 }
