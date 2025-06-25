@@ -1,12 +1,13 @@
 {
   "builds": [
     {
-      "src": "api/process-vowels.py", 
+      "src": "api/process-vowels.py",
       "use": "@vercel/python"
     },
     {
       "src": "index.html",
       "use": "@vercel/static-build"
+    }
   ],
   "routes": [
     {
@@ -15,11 +16,11 @@
     },
     {
       "src": "/",
-      "dest": "/index.html" 
+      "dest": "/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1" 
+      "dest": "/$1"
     }
   ]
 }
