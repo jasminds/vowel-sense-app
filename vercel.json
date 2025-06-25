@@ -3,6 +3,14 @@
     {
       "src": "api/process-vowels.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "public/**/*", // Ini mencakup semua file di dalam folder public dan subfoldernya
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public", // Output dari build statis diharapkan di 'public'
+        "zeroConfig": true // Mencoba mengaktifkan fitur zero-config untuk static-build
+      }
     }
   ],
   "routes": [
@@ -15,10 +23,5 @@
       "dest": "/$1"
     }
   ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  "outputDirectory": "public" // Ini harus cocok dengan distDir di static-build config
 }
