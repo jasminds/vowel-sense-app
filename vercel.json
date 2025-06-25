@@ -3,10 +3,6 @@
     {
       "src": "api/process-vowels.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "index.html",
-      "use": "@vercel/static-build"
     }
   ],
   "routes": [
