@@ -11,13 +11,8 @@
       "dest": "/api/process-vowels.py"
     },
     {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
+      "src": "/(.*)", // Ini akan menangani semua permintaan, termasuk "/" dan "/index.html", serta aset statis lainnya dari root
       "dest": "/$1"
     }
-  ],
-  "outputDirectory": "." 
+  ]
 }
